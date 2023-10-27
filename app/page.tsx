@@ -59,17 +59,17 @@ export default function Home() {
   };
 
   return (
-    <main className="p-20">
+    <main className="px-5 pt-10 lg:p-20">
       <div className="flex flex-col justify-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-8xl">{sarcastify("sarcastify")}</h1>
-          <p className="text-2xl pt-5">
+          <h1 className="text-4xl lg:text-8xl">{sarcastify("sarcastify")}</h1>
+          <p className="text-xl lg:text-2xl pt-5">
             {sarcastify("a sarcastic text generator")}
           </p>
         </div>
         <div className="flex flex-col justify-center items-center mt-10 w-full">
           <textarea
-            className="w-full max-w-[50%] h-20 text-black"
+            className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black"
             onChange={(e) => handleChange(e)}
           ></textarea>
           <div className="mt-5">
@@ -79,7 +79,7 @@ export default function Home() {
               <p>{sarcasitifiedText}</p>
             )}
           </div>
-          <div>
+          <div className="flex flex-col justify-center items-center">
             {!copied ? (
               <div className="flex flex-col justify-center items-center">
                 <button
@@ -91,7 +91,7 @@ export default function Home() {
                 <div>{error !== "" && error}</div>
               </div>
             ) : (
-              <p className="mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white">
+              <p className="mt-10 w-[75%] lg:w-full mb-3 bg-sky-900 px-5 py-2 rounded-md text-white">
                 {sarcastify(
                   "congratulations... you pushed the button and copied your text"
                 )}
