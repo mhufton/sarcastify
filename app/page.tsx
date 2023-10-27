@@ -46,6 +46,12 @@ export default function Home() {
     setText(e.target.value);
   };
 
+  const handleReset = () => {
+    setCopied(false);
+    setText("");
+    setSarcasitifiedText("");
+  };
+
   const handlesarcastify = () => {
     if (sarcasitifiedText === "") {
       setError(sarcastify("type something to sarcastify"));
@@ -53,7 +59,7 @@ export default function Home() {
       navigator.clipboard.writeText(sarcasitifiedText);
       setCopied(true);
       setTimeout(() => {
-        setCopied(false);
+        handleReset();
       }, 6000);
     }
   };
