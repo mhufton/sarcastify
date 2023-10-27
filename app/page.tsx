@@ -81,7 +81,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-center items-center mt-10 w-full">
           <textarea
-            className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black p-2"
+            className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black p-2 rounded-md"
             onChange={(e) => handleChange(e)}
             value={text}
           ></textarea>
@@ -93,40 +93,46 @@ export default function Home() {
               {sarcastify("clear text")}
             </div>
           )}
-          <div className="mt-5">
-            {text === "" ? (
-              <p>{sarcastify("type your message above to sarcastify it")}</p>
-            ) : (
-              <div className="flex flex-col justify-center items-center">
-                <p>{sarcastify("sarcastified message:")}</p>
-                <p className="text-4xl">{sarcasitifiedText}</p>
-              </div>
-            )}
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            {!copied ? (
-              <div className="flex flex-col justify-center items-center">
-                <button
-                  // className="mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white"
+          <div className="flex flex-col-reverse">
+            <div className="mt-5">
+              {text === "" ? (
+                <p className="text-[14px] lg:text:xl">
+                  {sarcastify("type your message above to sarcastify it")}
+                </p>
+              ) : (
+                <div className="flex flex-col flex-wrap justify-center items-center max-w-100vw">
+                  <p>{sarcastify("sarcastified message:")}</p>
+                  <p className="text-4xl flex flex-wrap break-all max-w-100vw">
+                    {sarcasitifiedText}
+                  </p>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              {!copied ? (
+                <div className="flex flex-col justify-center items-center">
+                  <button
+                    // className="mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white"
+                    className={`mt-2 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
+                      copied ? "animate-fadeOut" : "animate-fadeIn"
+                    }`}
+                    onClick={() => handlesarcastify()}
+                  >
+                    {sarcastify("Copy my message")}
+                  </button>
+                  <div>{error !== "" && error}</div>
+                </div>
+              ) : (
+                // <p className="mt-10 w-[75%] lg:w-full mb-3 bg-sky-900 px-5 py-2 rounded-md text-white">
+                <p
                   className={`mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
-                    copied ? "animate-fadeOut" : "animate-fadeIn"
+                    !copied ? "animate-fadeOut" : "animate-fadeIn"
                   }`}
-                  onClick={() => handlesarcastify()}
                 >
-                  {sarcastify("Copy my message")}
-                </button>
-                <div>{error !== "" && error}</div>
-              </div>
-            ) : (
-              // <p className="mt-10 w-[75%] lg:w-full mb-3 bg-sky-900 px-5 py-2 rounded-md text-white">
-              <p
-                className={`mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
-                  !copied ? "animate-fadeOut" : "animate-fadeIn"
-                }`}
-              >
-                {sarcastify("wowww you pushed the button")}
-              </p>
-            )}
+                  {sarcastify("wowww you pushed the button")}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
