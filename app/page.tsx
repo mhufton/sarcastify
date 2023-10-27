@@ -98,8 +98,8 @@ export default function Home() {
               <p>{sarcastify("type your message above to sarcastify it")}</p>
             ) : (
               <div className="flex flex-col justify-center items-center">
-                <p>{sarcastify("your message:")}</p>
-                <p>{sarcasitifiedText}</p>
+                <p>{sarcastify("sarcastified message:")}</p>
+                <p className="text-4xl">{sarcasitifiedText}</p>
               </div>
             )}
           </div>
