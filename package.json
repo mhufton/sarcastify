@@ -1,5 +1,7 @@
 {
-  "name": "SaRcAsTiFy",
+  "name": "sarcastify",
+  "description": "A sarcastic text generator",
+  "author": "Mike Hufton",
   "version": "0.1.0",
   "private": true,
   "scripts": {
