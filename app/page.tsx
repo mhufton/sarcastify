@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const sarcastify = (str: string) => {
   const isChar = /^[a-zA-Z]+$/;
-  const splitStr = str.split("");
+  const splitStr = str.toLowerCase().split("");
   const nonCharIndexes = new Map();
   const chars = [];
 
