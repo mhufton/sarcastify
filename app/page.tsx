@@ -36,7 +36,7 @@ export default function Home() {
   const [sarcasitifiedText, setSarcasitifiedText] = useState("");
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-
+  console.log('text"');
   useEffect(() => {
     setSarcasitifiedText(sarcastify(text));
   }, [text]);
@@ -58,6 +58,12 @@ export default function Home() {
     }
   };
 
+  const handleClear = () => {
+    setText("");
+    setSarcasitifiedText("");
+    setCopied(false);
+  };
+
   return (
     <main className="px-5 pt-10 lg:p-20">
       <div className="flex flex-col justify-center">
@@ -71,12 +77,24 @@ export default function Home() {
           <textarea
             className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black"
             onChange={(e) => handleChange(e)}
+            value={text}
           ></textarea>
+          {text !== "" && (
+            <div
+              className="mt-2 bg-gray-200 px-5 py-2 rounded-md text-black"
+              onClick={() => handleClear()}
+            >
+              {sarcastify("clear text")}
+            </div>
+          )}
           <div className="mt-5">
             {text === "" ? (
               <p>{sarcastify("type your message above to sarcastify it")}</p>
             ) : (
-              <p>{sarcasitifiedText}</p>
+              <div className="flex flex-col justify-center items-center">
+                <p>{sarcastify("your message:")}</p>
+                <p>{sarcasitifiedText}</p>
+              </div>
             )}
           </div>
           <div className="flex flex-col justify-center items-center">
