@@ -81,7 +81,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-center items-center mt-10 w-full">
           <textarea
-            className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black"
+            className="w-full max-w-[75%] lg:max-w-[50%] h-20 text-black p-2"
             onChange={(e) => handleChange(e)}
             value={text}
           ></textarea>
