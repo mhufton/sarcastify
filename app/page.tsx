@@ -107,7 +107,6 @@ export default function Home() {
             {!copied ? (
               <div className="flex flex-col justify-center items-center">
                 <button
-                  // className="mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white"
                   className={`mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
                     copied ? "animate-fadeOut" : "animate-fadeIn"
                   }`}
@@ -118,7 +117,6 @@ export default function Home() {
                 <div>{error !== "" && error}</div>
               </div>
             ) : (
-              // <p className="mt-10 w-[75%] lg:w-full mb-3 bg-sky-900 px-5 py-2 rounded-md text-white">
               <p
                 className={`mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
                   !copied ? "animate-fadeOut" : "animate-fadeIn"
