@@ -140,6 +140,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <a href={"/privacy"}>Privacy Policy</a>
     </main>
   );
 }
