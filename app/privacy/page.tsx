@@ -1,4 +1,4 @@
-export const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = () => {
   return (
     <div>
       <h1>Privacy Policy</h1>
@@ -6,3 +6,5 @@ export const PrivacyPolicyPage = () => {
     </div>
   );
 };
+
+export default PrivacyPolicyPage;
