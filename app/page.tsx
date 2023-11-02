@@ -55,6 +55,8 @@ export default function Home() {
     setSarcasitifiedText("");
   };
 
+  //
+
   const handlesarcastify = () => {
     if (sarcasitifiedText === "") {
       setError(sarcastify("type something to sarcastify"));
