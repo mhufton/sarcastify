@@ -1,5 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { track } from "@vercel/analytics";
+
+track("sarcastify");
 
 const sarcastify = (str: string) => {
   const isChar = /^[a-zA-Z]+$/;
@@ -56,6 +59,7 @@ export default function Home() {
     if (sarcasitifiedText === "") {
       setError(sarcastify("type something to sarcastify"));
     } else {
+      track("sarcastify");
       navigator.clipboard.writeText(sarcasitifiedText);
       setCopied(true);
       setTimeout(() => {
