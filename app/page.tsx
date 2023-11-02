@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
+import CookieConsent from "react-cookie-consent";
 
 track("sarcastify");
 
@@ -141,6 +142,13 @@ export default function Home() {
         </div>
       </div>
       <a href={"/privacy"}>Privacy Policy</a>
+      <CookieConsent>
+        We collect cookies. Check out our{" "}
+        <a href="/privacy" className="text-sky-500">
+          Privacy Page
+        </a>{" "}
+        for more info.
+      </CookieConsent>
     </main>
   );
 }
