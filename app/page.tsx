@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { track } from "@vercel/analytics";
+import { track } from "@vercel/analytics/server";
 import CookieConsent from "react-cookie-consent";
 
 track("sarcastify");
