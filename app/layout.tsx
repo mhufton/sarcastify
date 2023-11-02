@@ -29,7 +29,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body className={`${inter.className} px-5 pt-10 lg:p-20 min-h-screen`}>
-        <main className="flex flex-col justify-center items-center">
+        <main className="flex flex-col justify-start items-center min-h-screen">
           <a href="/" className="text-4xl lg:text-8xl">
             {sarcastify("sarcastify")}
           </a>

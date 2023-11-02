@@ -3,7 +3,6 @@
 import { sarcastify } from "@/app/util/sarcastify"
 import { track } from "@vercel/analytics"
 import { useEffect, useState } from "react"
-track("sarcastify")
 
 const Sarcastifier = () => {
   const [text, setText] = useState("")
@@ -53,7 +52,7 @@ const Sarcastifier = () => {
       ></textarea>
       {text !== "" && (
         <div
-          className="mt-2 bg-gray-200 px-5 py-2 rounded-md text-black"
+          className="mt-2 bg-slate-700 px-5 py-2 rounded-md text-white"
           onClick={() => handleClear()}
         >
           {sarcastify("clear text")}
@@ -72,7 +71,7 @@ const Sarcastifier = () => {
           {!copied ? (
             <div className="flex flex-col justify-center items-center">
               <button
-                className={`mt-2 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
+                className={`mt-2 mb-3 bg-sky-700 px-5 py-2 rounded-md text-white ${
                   copied ? "animate-fadeOut" : "animate-fadeIn"
                 }`}
                 onClick={() => handlesarcastify()}
