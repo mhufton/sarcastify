@@ -32,8 +32,8 @@ const Sarcastifier = () => {
       navigator.clipboard.writeText(sarcasitifiedText)
       setCopied(true)
       setTimeout(() => {
-        handleReset()
-      }, 6000)
+        setCopied(false)
+      }, 3000)
     }
   }
 
@@ -50,14 +50,14 @@ const Sarcastifier = () => {
         onChange={(e) => handleChange(e)}
         value={text}
       ></textarea>
-      {text !== "" && (
+      {/* {text !== "" && (
         <div
           className="mt-2 bg-slate-700 px-5 py-2 rounded-md text-white"
           onClick={() => handleClear()}
         >
           {sarcastify("clear text")}
         </div>
-      )}
+      )} */}
       <div className="flex flex-col-reverse">
         <div className="mt-5">
           <div className="flex flex-col flex-wrap justify-center items-center max-w-100vw">
@@ -67,22 +67,32 @@ const Sarcastifier = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="mt-2 flex flex-col justify-center items-center">
           {!copied ? (
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex justify-center items-center">
               <button
-                className={`mt-2 mb-3 bg-sky-700 px-5 py-2 rounded-md text-white ${
+                className={`mr-2 bg-sky-700 px-5 py-2 rounded-md text-white ${
                   copied ? "animate-fadeOut" : "animate-fadeIn"
                 }`}
                 onClick={() => handlesarcastify()}
               >
                 {sarcastify("Copy my message")}
               </button>
-              <div>{error !== "" && error}</div>
+              {/* <div>{error !== "" && error}</div> */}
+              {text !== "" && (
+                <button
+                  className={`bg-slate-700 px-5 py-2 rounded-md text-white ${
+                    copied ? "animate-fadeOut" : "animate-fadeIn"
+                  }`}
+                  onClick={() => handleClear()}
+                >
+                  {sarcastify("clear text")}
+                </button>
+              )}
             </div>
           ) : (
             <p
-              className={`mt-10 mb-3 bg-sky-900 px-5 py-2 rounded-md text-white ${
+              className={`lg:mt-10 bg-sky-900 px-5 py-2 rounded-md text-white ${
                 !copied ? "animate-fadeOut" : "animate-fadeIn"
               }`}
             >

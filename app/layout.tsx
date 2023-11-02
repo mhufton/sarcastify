@@ -28,8 +28,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className={`${inter.className} px-5 pt-10 lg:p-20 min-h-screen`}>
-        <main className="flex flex-col justify-start items-center min-h-screen">
+      <body
+        className={`${inter.className} px-5 pt-10 lg:p-20 min-h-screen flex flex-col`}
+      >
+        <main className="flex flex-col justify-start items-center flex-1">
           <a href="/" className="text-4xl lg:text-8xl">
             {sarcastify("sarcastify")}
           </a>
@@ -38,7 +40,14 @@ export default function RootLayout({
           </p>
           {children}
         </main>
+
         <Analytics />
+
+        <footer className="flex justify-center mb-5">
+          <a href={"/privacy"} className="text-center">
+            Privacy Policy
+          </a>
+        </footer>
       </body>
     </html>
   )

@@ -8,9 +8,6 @@ export default function Home() {
         <div className="flex flex-col justify-center">
           <Sarcastifier />
         </div>
-        <a href={"/privacy"} className="justify-self-end text-center">
-          Privacy Policy
-        </a>
       </div>
       <CookieBanner />
     </div>
