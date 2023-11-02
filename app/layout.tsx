@@ -1,19 +1,20 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { Analytics } from "@vercel/analytics/react"
+import { sarcastify } from "./util/sarcastify"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "SaRcAsTiFy",
   description: "A sArCaStIc TeXt GeNeRaToR",
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -27,10 +28,18 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className={inter.className}>
-        {children}
+      <body className={`${inter.className} px-5 pt-10 lg:p-20 min-h-screen`}>
+        <main className="flex flex-col justify-center items-center">
+          <a href="/" className="text-4xl lg:text-8xl">
+            {sarcastify("sarcastify")}
+          </a>
+          <p className="text-xl lg:text-2xl pt-5">
+            {sarcastify("a sarcastic text generator")}
+          </p>
+          {children}
+        </main>
         <Analytics />
       </body>
     </html>
-  );
+  )
 }
