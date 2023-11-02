@@ -40,7 +40,6 @@ export default function Home() {
   const [sarcasitifiedText, setSarcasitifiedText] = useState("");
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-  console.log('text"');
   useEffect(() => {
     setSarcasitifiedText(sarcastify(text));
   }, [text]);
