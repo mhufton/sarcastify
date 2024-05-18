@@ -1,9 +1,10 @@
 const PrivacyPolicyPage = () => (
   <div className="p-3 lg: ">
-    <a href="/" className="text-sky-500">
+    <h1 className="text-center text-2xl font-bold">Privacy Policy</h1>
+    <a href="/" className="text-sky-500 text-center">
       Go Back Home
     </a>
-    <h1>Privacy Policy</h1>
+
     <p>Last updated: November 02, 2023</p>
     <p>
       This Privacy Policy describes Our policies and procedures on the
