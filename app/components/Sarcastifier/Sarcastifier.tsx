@@ -46,7 +46,7 @@ const Sarcastifier = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-10 w-full">
       <textarea
-        className="w-full max-w-[75%] lg:max-w-[50%] h-20 md:h-[150px] text-black p-2 rounded-md min-w-[250px]"
+        className="w-full max-w-[500px] lg:max-w-[50%] h-20 md:h-[150px] text-black p-2 rounded-md min-w-[250px]"
         onChange={(e) => handleChange(e)}
         value={text}
       ></textarea>
